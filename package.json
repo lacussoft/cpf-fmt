@@ -1,0 +1,41 @@
+{
+  "name": "@lacussoft/cpf-fmt",
+  "version": "1.0.0",
+  "description": "Basic function to format CPF (Brazilian ID document).",
+  "author": "Julio L. Muller",
+  "license": "MIT",
+  "keywords": [
+    "lacussoft",
+    "cpf",
+    "format",
+    "formatar cof",
+    "cpf formating",
+    "br"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lacussoft/cpf-fmt.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lacussoft/cpf-fmt/issues"
+  },
+  "homepage": "https://github.com/lacussoft/cpf-fmt#readme",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run build:dist && npm run build:node",
+    "build:dist": "parcel build src/cpf-fmt.js --no-minify && parcel build src/cpf-fmt.js -o cpf-fmt.min.js",
+    "build:node": "parcel build src/index.js --no-source-maps --no-minify -d ./ --target node",
+    "test": "node test/index.js"
+  },
+  "dependencies": {
+    "@lacussoft/num-only": "1.*"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "2.*",
+    "@typescript-eslint/parser": "2.*",
+    "eslint": "6.*",
+    "eslint-config-google": "*",
+    "parcel-bundler": "1.*",
+    "typescript": "3.*"
+  }
+}
