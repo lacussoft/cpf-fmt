@@ -1,7 +1,7 @@
 {
-  "name": "@lacussoft/cpf-fmt",
+  "name": "@lacussoft/cpf-val",
   "version": "1.0.0",
-  "description": "Basic function to format CPF (Brazilian ID document).",
+  "description": "Basic function to validate CPF (Brazilian ID document).",
   "author": "Julio L. Muller",
   "license": "MIT",
   "keywords": [
@@ -14,16 +14,16 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lacussoft/cpf-fmt.git"
+    "url": "git+https://github.com/lacussoft/cpf-val.git"
   },
   "bugs": {
-    "url": "https://github.com/lacussoft/cpf-fmt/issues"
+    "url": "https://github.com/lacussoft/cpf-val/issues"
   },
-  "homepage": "https://github.com/lacussoft/cpf-fmt#readme",
+  "homepage": "https://github.com/lacussoft/cpf-val#readme",
   "main": "index.js",
   "scripts": {
     "build": "npm run build:dist && npm run build:node",
-    "build:dist": "parcel build src/cpf-fmt.js --no-minify && parcel build src/cpf-fmt.js -o cpf-fmt.min.js",
+    "build:dist": "parcel build src/cpf-val.js --no-minify && parcel build src/cpf-val.js -o cpf-val.min.js",
     "build:node": "parcel build src/index.js --no-source-maps --no-minify -d ./ --target node",
     "test": "node test/index.js"
   },
