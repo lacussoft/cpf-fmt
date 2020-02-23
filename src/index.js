@@ -1,1 +1,1 @@
-module.exports = require('./cpfVal.ts').default
+module.exports = require('./cpfFmt.ts').default
