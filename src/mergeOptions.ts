@@ -11,7 +11,7 @@ import { CpfFormatingOptions } from './CpfFormatingOptions'
  */
 export default function mergeOptions(options: CpfFormatingOptions) {
 
-  const {
+  let {
     delimiters: { dot = '.', dash = '-' } = {},
     hiddenRange: { start = 3, end = 10, } = {},
     hiddenKey = '*',
@@ -22,12 +22,21 @@ export default function mergeOptions(options: CpfFormatingOptions) {
     },
   } = options
 
-  if (Number(start) === NaN || start < 0 || start > 10) {
-    throw new TypeError('Option \'hiddenRange.start\' must be a callbacknumber between 0 and 10.')
-  }
+  if (hidden) {
 
-  if (Number(end) === NaN || end < 0 || end > 10) {
-    throw new TypeError('Option \'hiddenRange.end\' must be a callbacknumber between 0 and 10.')
+    if (Number(start) === NaN || start < 0 || start > 10) {
+      throw new TypeError('Option \'hiddenRange.start\' must be a callbacknumber between 0 and 10.')
+    }
+
+    if (Number(end) === NaN || end < 0 || end > 10) {
+      throw new TypeError('Option \'hiddenRange.end\' must be a callbacknumber between 0 and 10.')
+    }
+
+    if (start > end) {
+      start = start ^end
+      end = start ^end
+      start = start ^end
+    }
   }
 
   if (typeof(onFail) !== 'function') {
