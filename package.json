@@ -28,7 +28,8 @@
     "test": "node test/index.js"
   },
   "dependencies": {
-    "@lacussoft/num-only": "1.*"
+    "@lacussoft/num-only": "1.*",
+    "html-escaper": "2.*"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "2.*",
