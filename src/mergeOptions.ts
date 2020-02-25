@@ -18,7 +18,7 @@ export default function mergeOptions(options: CpfFormatingOptions) {
     hidden = false,
     escape = false,
     onFail = (value: string) => {
-      throw new Error(`'${value}' cannot be resolved to a CPF numeric sequence (11 digits)`)
+      throw new EvalError(`'${value}' cannot be resolved to a CPF numeric sequence (11 digits)`)
     },
   } = options
 
