@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable no-unused-vars */
 /* eslint-disable indent */
 import { CpfFormatingOptions } from './CpfFormatingOptions'
@@ -17,11 +18,17 @@ export default function mergeOptions(options: CpfFormatingOptions) {
     hidden = false,
     escape = false,
     onFail = (value: string) => {
-      throw new Error(
-        `'${value}' cannot be resolved to a CPF numeric sequence (11 digits)`
-      )
+      throw new Error(`'${value}' cannot be resolved to a CPF numeric sequence (11 digits)`)
     },
   } = options
+
+  if (Number(start) === NaN || start < 0 || start > 10) {
+    throw new TypeError('Option \'hiddenRange.start\' must be a callbacknumber between 0 and 10.')
+  }
+
+  if (Number(end) === NaN || end < 0 || end > 10) {
+    throw new TypeError('Option \'hiddenRange.end\' must be a callbacknumber between 0 and 10.')
+  }
 
   if (typeof(onFail) !== 'function') {
     throw new TypeError('The option \'onFail\' must be a callback function.')
