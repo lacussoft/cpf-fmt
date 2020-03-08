@@ -24,7 +24,7 @@
   "scripts": {
     "build": "npm run build:dist && npm run build:node",
     "build:dist": "parcel build src/dist.js -o cpf-fmt.js --no-minify && parcel build src/dist.js -o cpf-fmt.min.js",
-    "build:node": "parcel build src/core/cpfFmt.ts  -d src/ -o index.js --no-source-maps --no-minify --target node",
+    "build:node": "parcel build src/core/index.js  -d src/ -o index.js --no-source-maps --no-minify --target node",
     "test": "jest"
   },
   "dependencies": {

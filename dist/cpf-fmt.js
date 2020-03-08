@@ -117,7 +117,79 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"wp2b":[function(require,module,exports) {
+})({"yqQa":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.escape = escape;
+exports.unescape = unescape;
+
+/**
+ * Copyright (C) 2017-present by Andrea Giammarchi - @WebReflection
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+var replace = ''.replace;
+var ca = /[&<>'"]/g;
+var es = /&(?:amp|#38|lt|#60|gt|#62|apos|#39|quot|#34);/g;
+var esca = {
+  '&': '&amp;',
+  '<': '&lt;',
+  '>': '&gt;',
+  "'": '&#39;',
+  '"': '&quot;'
+};
+var unes = {
+  '&amp;': '&',
+  '&#38;': '&',
+  '&lt;': '<',
+  '&#60;': '<',
+  '&gt;': '>',
+  '&#62;': '>',
+  '&apos;': "'",
+  '&#39;': "'",
+  '&quot;': '"',
+  '&#34;': '"'
+};
+
+function escape(es) {
+  return replace.call(es, ca, pe);
+}
+
+;
+
+function unescape(un) {
+  return replace.call(un, es, cape);
+}
+
+;
+
+function pe(m) {
+  return esca[m];
+}
+
+function cape(m) {
+  return unes[m];
+}
+},{}],"x8gg":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -191,13 +263,31 @@ function mergeOptions(options) {
 }
 
 exports.default = mergeOptions;
-},{}],"VRRp":[function(require,module,exports) {
+},{}],"GX3L":[function(require,module,exports) {
+/**
+ * Removes any non-numeric character from a string chaing
+ *
+ * @param {string} target
+ * @returns {string} - Target string you want to clear from NaN characters
+ */
+module.exports = function(target) {
+
+  return String(target).replace(/\D/g, '')
+}
+
+},{}],"gbup":[function(require,module,exports) {
 "use strict";
 
 var __spreadArrays = this && this.__spreadArrays || function () {
-  for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+  for (var s = 0, i = 0, il = arguments.length; i < il; i++) {
+    s += arguments[i].length;
+  }
 
-  for (var r = Array(s), k = 0, i = 0; i < il; i++) for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++) r[k] = a[j];
+  for (var r = Array(s), k = 0, i = 0; i < il; i++) {
+    for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++) {
+      r[k] = a[j];
+    }
+  }
 
   return r;
 };
@@ -260,6 +350,7 @@ function default_1(cpfString, options) {
 }
 
 exports.default = default_1;
-},{"./mergeOptions":"wp2b"}],"Focm":[function(require,module,exports) {
-module.exports = require('./cpfFmt.ts').default;
-},{"./cpfFmt.ts":"VRRp"}]},{},["Focm"], null)
+},{"html-escaper":"yqQa","./mergeOptions":"x8gg","@lacussoft/num-only":"GX3L"}],"UeJd":[function(require,module,exports) {
+window.cpfFmt = require('./core/cpfFmt.ts').default;
+},{"./core/cpfFmt.ts":"gbup"}]},{},["UeJd"], null)
+//# sourceMappingURL=/cpf-fmt.js.map
