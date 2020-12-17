@@ -14,7 +14,7 @@ const DEFAULT_ESCAPE_STATE = false;
  * @param {CpfFormattingOptions} options
  * @return {CpfFormattingOptions}
  */
-export const mergeOptions = (options = {}) => {
+const mergeOptions = (options = {}) => {
   let {
     delimiters: {
       dot = DEFAULT_DOT_SYMBOL,
@@ -59,3 +59,5 @@ export const mergeOptions = (options = {}) => {
     onFail,
   };
 };
+
+export default mergeOptions;

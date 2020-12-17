@@ -1,6 +1,6 @@
 import html from 'html-escaper';
 import numOnly from '@lacussoft/num-only';
-import { mergeOptions } from './utils';
+import mergeOptions from './merge-options';
 
 /**
  * Validate a given CPF char sequence.
