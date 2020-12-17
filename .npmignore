@@ -1,5 +1,9 @@
-**/.*
-*.iml
-*.log
+.DS_Store/
+.vscode/
 node_modules/
+src/
 test/
+
+**/.*
+**/*.log
+**/*.config.js
