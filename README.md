@@ -1,26 +1,28 @@
 # LacusSoft :: cpf-fmt
 
-[![npm version](https://img.shields.io/npm/v/@lacussoft/cpf-fmt.svg?style=flat-square)](https://www.npmjs.org/package/@lacussoft/cpf-fmt)
-[![install size](https://packagephobia.now.sh/badge?p=@lacussoft/cpf-fmt)](https://packagephobia.now.sh/result?p=@lacussoft/cpf-fmt)
-[![npm downloads](https://img.shields.io/npm/dm/@lacussoft/cpf-fmt.svg?style=flat-square)](http://npm-stat.com/charts.html?package=@lacussoft/cpf-fmt)
-[![build status](https://img.shields.io/travis/lacussoft/cpf-fmt/master.svg?style=flat-square)](https://travis-ci.org/lacussoft/cpf-fmt)
+![NPM Latest Version](https://img.shields.io/npm/v/@lacussoft/cpf-fmt)
+![Downloads Count](https://img.shields.io/npm/dm/@lacussoft/cpf-fmt.svg)
+![Bundle Size](https://packagephobia.now.sh/badge?p=@lacussoft/cpf-fmt)
+![Test Status](https://img.shields.io/travis/juliolmuller/cpf-fmt/master.svg)
+![Last Update Date](https://img.shields.io/github/last-commit/juliolmuller/cpf-fmt)
+![Project License](https://img.shields.io/github/license/juliolmuller/cpf-fmt)
 
-Basic function to generate valid CPF (Brazilian ID document).
+Basic function to format CPF strings (Brazilian ID document).
 
-### Installation:
+## Installation
 
 ```bash
 $ npm install @lacussoft/cpf-fmt
 ```
 
-### Import:
+## Import
 
 ```js
-// ES6+ notation
+// ES Modules
 import cpfFmt from '@lacussoft/cpf-fmt'
 
 // Common JS
-const cpfFmt = require('@lacussoft/cpf-fmt')
+const cpfFmt = require('@lacussoft/cpf-fmt').default
 ```
 
 or import it through your HTML file, using CDN:
@@ -29,10 +31,11 @@ or import it through your HTML file, using CDN:
 <script src="https://cdn.jsdelivr.net/npm/@lacussoft/cpf-fmt@latest/dist/cpf-fmt.min.js"></script>
 ```
 
-### Usage:
+## Usage
 
 ```js
 const cpf = '47844241055'
+
 cpfFmt(cpf)       // returns '478.442.410-55'
 
 cpfFmt(cpf, {     // returns '478.***.***-**'
@@ -47,7 +50,7 @@ cpfFmt(cpf, {     // returns '478442410_55'
 })
 ```
 
-#### Formating options:
+### Formatting options
 
 ```js
 cpfFmt(cpf, {
@@ -63,7 +66,7 @@ cpfFmt(cpf, {
     end: 10,        // ending index of the numeric sequence to be hidden (max 10)
   },
   onFail(value) {   // fallback function to be invoked in case a non-11-digits is passed
-    returnthrow new EvalError()
+    return value
   }
 })
 ```
