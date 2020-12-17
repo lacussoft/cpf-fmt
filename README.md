@@ -22,7 +22,7 @@ $ npm install @lacussoft/cpf-fmt
 import cpfFmt from '@lacussoft/cpf-fmt'
 
 // Common JS
-const cpfFmt = require('@lacussoft/cpf-fmt').default
+const { cpfFmt } = require('@lacussoft/cpf-fmt')
 ```
 
 or import it through your HTML file, using CDN:

@@ -9,7 +9,7 @@ import mergeOptions from './merge-options';
  * @param {CpfFormattingOptions} [options]
  * @return {string}
  */
-const cpfFmt = (cpfString, options = {}) => {
+export const cpfFmt = (cpfString, options = {}) => {
   const CPF_LENGTH = 11;
   const cpfArray = numOnly(cpfString).split('');
   const userOptions = mergeOptions(options);
