@@ -14,5 +14,5 @@ export type CpfFormattingOptions = {
   escape?: boolean;
 };
 
-export const cpfFmt: (cpfString: string, options?: CpfFormattingOptions) => string
-export default cpfFmt
+export const cpfFmt: (cpfString: string, options?: CpfFormattingOptions) => string;
+export default cpfFmt;
