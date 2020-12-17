@@ -1,43 +1,48 @@
 {
   "name": "@lacussoft/cpf-fmt",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Basic function to validate CPF (Brazilian ID document).",
   "author": "Julio L. Muller",
   "license": "MIT",
   "keywords": [
     "lacussoft",
     "cpf",
-    "fmt",
-    "formatar",
     "format",
+    "formatting",
+    "formatar",
+    "mascara",
     "br"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lacussoft/cpf-fmt.git"
+    "url": "git+https://github.com/juliolmuller/cpf-fmt.git"
   },
   "bugs": {
-    "url": "https://github.com/lacussoft/cpf-fmt/issues"
+    "url": "https://github.com/juliolmuller/cpf-fmt/issues"
   },
-  "homepage": "https://github.com/lacussoft/cpf-fmt#readme",
-  "main": "src/index.js",
+  "homepage": "https://github.com/juliolmuller/cpf-fmt#readme",
+  "typings": "build/types.d.ts",
+  "main": "build/index.js",
   "scripts": {
-    "build": "npm run build:dist && npm run build:node",
-    "build:dist": "parcel build src/dist.js -o cpf-fmt.js --no-minify && parcel build src/dist.js -o cpf-fmt.min.js",
-    "build:node": "parcel build src/core/index.js  -d src/ -o index.js --no-source-maps --no-minify --target node",
+    "build:browser": "rm -rf dist/ && webpack --mode=production",
+    "build:node": "rm -rf build/ && babel src/ --out-dir build/ && cp src/*.d.ts build/",
+    "build": "npm run build:browser && npm run build:node",
+    "lint": "eslint --fix src/**/*.js",
     "test": "jest"
   },
   "dependencies": {
-    "@lacussoft/num-only": "^1.0.5",
-    "html-escaper": "^2.0.2"
+    "@lacussoft/num-only": "^1.0.6",
+    "html-escaper": "^3.0.0"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^2.34.0",
-    "@typescript-eslint/parser": "^2.34.0",
-    "eslint": "^6.8.0",
-    "eslint-config-google": "^0.14.0",
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@lacussoft/eslint-config": "^1.0.0",
+    "babel-loader": "^8.2.2",
+    "eslint": "^7.15.0",
     "jest": "^25.5.4",
-    "parcel-bundler": "^1.12.4",
-    "typescript": "^3.9.7"
+    "webpack": "^5.10.3",
+    "webpack-cli": "^4.2.0"
   }
 }
