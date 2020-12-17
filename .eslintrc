@@ -1,0 +1,24 @@
+{
+  "env": {
+    "shared-node-browser": true,
+    "es6": true,
+    "jest": true
+  },
+  "extends": [
+    "@lacussoft"
+  ],
+  "ignorePatterns": [
+    "build/",
+    "dist/",
+    "**/*.d.ts",
+    "!.babelrc*"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "rules": {
+    "semi": ["error", "always"],
+    "semi-style": ["error", "last"]
+  }
+}
