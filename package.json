@@ -1,7 +1,7 @@
 {
   "name": "@lacussoft/cpf-fmt",
   "version": "1.0.6",
-  "description": "Basic function to validate CPF (Brazilian ID document).",
+  "description": "Basic function to format CPF (Brazilian ID document).",
   "author": "Julio L. Muller",
   "license": "MIT",
   "keywords": [
