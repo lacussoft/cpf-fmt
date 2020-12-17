@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "@lacussoft/num-only": "^1.0.6",
-    "html-escaper": "^3.0.0"
+    "html-escaper": "^2.0.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.10",
