@@ -41,7 +41,7 @@
     "@lacussoft/eslint-config": "^1.0.0",
     "babel-loader": "^8.2.2",
     "eslint": "^7.15.0",
-    "jest": "^25.5.4",
+    "jest": "^26.6.3",
     "webpack": "^5.10.3",
     "webpack-cli": "^4.2.0"
   }
