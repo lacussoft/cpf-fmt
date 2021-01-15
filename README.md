@@ -3,7 +3,7 @@
 ![NPM Latest Version](https://img.shields.io/npm/v/@lacussoft/cpf-fmt)
 ![Downloads Count](https://img.shields.io/npm/dm/@lacussoft/cpf-fmt.svg)
 ![Bundle Size](https://packagephobia.now.sh/badge?p=@lacussoft/cpf-fmt)
-![Test Status](https://img.shields.io/travis/juliolmuller/cpf-fmt-js/master.svg)
+![Test Status](https://img.shields.io/travis/juliolmuller/cpf-fmt-js/main.svg)
 ![Last Update Date](https://img.shields.io/github/last-commit/juliolmuller/cpf-fmt-js)
 ![Project License](https://img.shields.io/github/license/juliolmuller/cpf-fmt-js)
 
