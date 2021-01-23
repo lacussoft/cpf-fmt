@@ -1,4 +1,4 @@
-const { cpfFmt } = require('../src');
+const cpfFmt = require('../src');
 
 test('Option with range start -1 throws TypeError', () => {
   const cpf = () => cpfFmt('80976511061', {

@@ -1,4 +1,4 @@
-const { cpfFmt } = require('../src');
+const cpfFmt = require('../src');
 
 test('"809.765.110-61" formats to "809.765.110-61"', () => {
   const cpf = cpfFmt('809.765.110-61');
